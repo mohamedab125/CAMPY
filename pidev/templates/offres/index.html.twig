@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OffreController!{% endblock %}
+
+{% block body %}
+
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">nom</th>
+        <th scope="col">date_debut</th>
+        <th scope="col">date_fin</th>
+        <th scope="col">pourcentage</th>
+        <th scope="col">id</th>
+        <th scope="col">image</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for Offre in b %}
+      <tr>
+        
+       <td>{{Offre.id}}</td>
+        <td>{{Offre.nom}}</td>
+        <td>{{Offre.dateDatedeb|date('d-m-Y')}} </td>
+        <td>{{Offre.dateFin|date('d-m-Y')}}</td>
+        <td>{{Offre.pourcentage}}</td>
+        <td> {{Offre.id}}</td>
+<td><img height="70px" width="100px" src="{{ asset('uploads/images/') }}{{Offre.image  }}"></td>
+        <td><a  href="{{  path('modifierOffre',{'idoffre':Offre.idoffre}) }}"><button type="button" class="btn btn-success">edit</button> </a>   
+            <a  href="{{  path('suppoffre',{'idoffre':Offre.idoffre}) }}"><button type="button" class="btn btn-danger">delete</button></a> 
+            
+          </td>
+      </tr>
+      {% endfor %} 
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

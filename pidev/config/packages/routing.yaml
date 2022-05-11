@@ -1,0 +1,8 @@
+framework:
+    router:
+        utf8: true
+    
+# /app/config/routes.yaml
+captcha:
+    captchaConfig: "@CaptchaBundle/Resources/config/routing.yml"
+    
