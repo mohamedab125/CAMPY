@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello formation{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="table-responsive" >
+<table class="table">
+    <thead> 
+    <th> id </th>
+    <th> nom </th>
+    <th> nom_formateur </th>
+    <th> date_deb </th>
+    <th> date_fin </th>
+    <th>prix </th>
+    <th> description  </th>
+    <th> user_id </th>
+     <th> modifier </th>
+    <th>supprimer  </th>
+    </thead>
+    <tbody>
+    {% for formation in b %}
+    <tr>
+    <td> {{ formation.id }}</td> 
+     <td> {{ formation.nom}} </td> 
+      <td>{{  formation.nom_formateur }}</td> 
+       <td>{{  formation.date_deb|date('d-m-Y') }}</td> 
+        <td>{{  formation.date_fin|date('d-m-Y')}} </td> 
+         <td> {{ formation.prix }}</td> 
+         <td>{{  formation.description }}</td> 
+          <td>{{  formation.user_id }}</td> 
+         
+         
+              <td> 
+              <a href="{{path('modifierformation',{'id':formation.id}) }}">modifier </a>
+
+              </td> 
+               <td>
+               <a href="{{path('deleteformation',{'id':formation.id}) }}">supprimer </a>
+                </td> 
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
