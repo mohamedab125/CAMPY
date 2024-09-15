@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+
+     
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{{asset('forms/fonts/linearicons/style.css')}}">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{{asset('forms/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="{{asset('forms/vendor/date-picker/css/datepicker.min.css')}}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{asset('forms/css/style.css')}}">
+
+
+          
+        {% endblock %}
+    </head>
+    <body> 
+     {% block body %}   {% endblock %}
+        
+        {% block javascripts %}
+        
+		<script src="{{asset('forms/js/jquery-3.3.1.min.js')}}"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="{{asset('forms/vendor/date-picker/js/datepicker.js')}}"></script>
+		<script src="{{asset('forms/vendor/date-picker/js/datepicker.en.js')}}"></script>
+
+		<script src="{{asset('forms/js/main.js')}}"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="{{asset('https://www.googletagmanager.com/gtag/js?')}}"></script>
+		<script src="{{asset('https://phpsources.net/code_s.php?id=633')}}"></script>
+
+
+        
+  {% endblock %}
+        
+     
+     
+    
+    </body>
+</html>
